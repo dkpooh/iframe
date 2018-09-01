@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Iframe</title>
+</head>
+<body>
+  <div>
+    <iframe id="frame" with="500px" height="500px" src="./text.html"></iframe>
+    <div><button id="btn">버어튼</button></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script>
+
+    $('#btn').bind('click', function(e) {
+      sendMsg("출력해주세요!");
+    });
+
+    function sendMsg(msg) {
+      $('#frame')[0].contentWindow.postMessage(msg, '*');
+    }
+  </script>
+</body>
+</html>

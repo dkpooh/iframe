@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Iframe</title>
+</head>
+<body>
+  <div>안녕 나는 텍스트야</div>
+  <div id="text"></div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script>
+    $(window).on('message', receiveMsg);
+
+    function receiveMsg(e) {
+      console.log(e.originalEvent.data);
+      if(e.originalEvent.data = "출력해주세요") {
+        alert("출력해주세요");
+      }
+      // $('#text').html(e.originalEvent.data);
+    }
+  </script>
+</body>
+</html>
